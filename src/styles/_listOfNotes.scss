@@ -1,0 +1,50 @@
+.listContainer {
+	margin-top: 20px;
+	height: 300px;
+	overflow-y: scroll;
+	scrollbar-width: thick;
+	scrollbar-color: $green transparent;
+}
+
+.listOfNotesHeader {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.listOfNotes {
+
+	h3 {
+		padding-bottom: 10px;
+	}
+
+	li {
+		list-style-type: none;
+		padding: 0 0 10px 0;
+		color: white;
+	}
+
+	p {
+		height: 50px;
+		overflow: hidden;
+	}
+}
+
+.save {
+	align-self: flex-end;
+	margin-top: 10px;
+	background-color: $green;
+	font-weight: 600;
+}
+
+.delete {
+background-color: red;
+}
+
+.button {
+	border-radius: 10px;
+	height: 30px;
+	width: 60px;
+	font-size: 1.5rem;
+	padding: 5px;
+	
+}

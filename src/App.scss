@@ -1,2 +1,26 @@
+@import "styles/variables";
 @import "styles/setup";
+@import "styles/notes";
+@import "styles/listOfNotes";
+@import "styles/fonts";
 
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Cairo', sans-serif;
+	font-weight: 900;
+}
+
+.notesContainer {
+	background: $pink;
+	border-radius: 26px;
+	width: 500px;
+	height: 900px;
+	font-size: 2rem;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
