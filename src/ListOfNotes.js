@@ -24,26 +24,35 @@ function ListOfNotes({ notesArray }) {
 					{
 						
 						notesArray.map((noteData) => {
-							return (
 
-								<div key={noteData.uniqueKey}>
-									<li>
-										<h3>
-											{noteData.noteContent.titleInput}
-										</h3>
-										<div className="paragraphAndDeleteContainer">
-											<p>
-												{noteData.noteContent.bodyInput}
-											</p>
-											<button className="delete button" onClick={() => deleteEntry(noteData.uniqueKey)}><RiDeleteBack2Line /></button>
-										</div>
-									</li>
-								</div>
+								// ensures that an empty string does not display
+							if(noteData.noteContent.titleInput !== "" && noteData.noteContent.bodyInput !== ""){
 
-							)
+
+
+								return (
+	
+									<div key={noteData.uniqueKey}>
+										<li>
+											<h3>
+												{noteData.noteContent.titleInput}
+											</h3>
+											<div className="paragraphAndDeleteContainer">
+												<p>
+													{noteData.noteContent.bodyInput}
+												</p>
+												<button className="delete button" onClick={() => deleteEntry(noteData.uniqueKey)}><RiDeleteBack2Line /></button>
+											</div>
+										</li>
+									</div>
+								
+								)
+							}
+
+							
 						})
 					}
-
+				
 				</ul>
 			</div>
 		</>

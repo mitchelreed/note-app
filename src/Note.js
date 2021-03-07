@@ -33,17 +33,21 @@ function Note() {
 
 
 	const handleChange = (event, input) => {
+		
 
-		input(event.target.value)
-
+			input(event.target.value)
+		
 	}
 
 	const handleClick = (event) => {
 		event.preventDefault()
 
 		const dbRef = firebase.database().ref()
-		dbRef.push({ titleInput, bodyInput })
 
+		// ensures that an empty string does not get pushed to firebase
+		if (titleInput !== "" && bodyInput !== "") {
+		dbRef.push({ titleInput, bodyInput })
+		}
 		setTitleInput("")
 		setBodyInput("")
 
