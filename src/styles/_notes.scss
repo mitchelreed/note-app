@@ -25,11 +25,9 @@ input {
 	color: white;
 	background-color: $gray;
 	font-weight: 800;
-
 }
 
 input::placeholder {
-	
 	background-color: $gray;
 	font-weight: 400;
 }
@@ -47,16 +45,27 @@ input:focus {
 }
 
 .save {
-	align-self: flex-end;
-	margin-top: 10px;
+	cursor: pointer;
+	align-self: center;
+	margin-top: 30px;
 	border: none;
 	background-color: $yellow;
 	font-weight: 600;
 	border-radius: 10px;
 	height: 30px;
-	width: 100%;
+	width: 165px;
 	font-size: 2rem;
 	padding: 5px;
-	cursor: pointer;
-	color:white;
+	color: white;
+	box-shadow: 8px -5px 29px -5px rgba(244, 214, 14, 0.75);
+	-webkit-box-shadow: 8px -5px 29px -5px rgba(244, 214, 14, 0.75);
+	-moz-box-shadow: 8px -5px 29px -5px rgba(244, 214, 14, 0.75);
+	transition: all 0.8s ease;
+
+	&:hover {
+		transform: translateY(-4px);
+		box-shadow: 8px -5px 29px -11px rgba(244, 214, 14, 0.75);
+		-webkit-box-shadow: 8px -5px 29px -11px rgba(244, 214, 14, 0.75);
+		-moz-box-shadow: 8px -5px 29px -11px rgba(244, 214, 14, 0.75);
+	}
 }
