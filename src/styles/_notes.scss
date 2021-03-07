@@ -2,19 +2,61 @@ form {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	z-index: 10;
 }
 
 textarea {
-	height: 400px;
+	height: 500px;
 	border: none;
 	padding: 0 0 0 20px;
 	resize: none;
 	border-radius: 0 0 10px 10px;
+	overflow-y: scroll;
+	scrollbar-color: transparent transparent;
+	font-family: "Poppins", sans-serif;
+
+	color: white;
+	background-color: $gray;
+}
+
+input {
+	font-family: "Poppins", sans-serif;
+
+	color: white;
+	background-color: $gray;
+	font-weight: 800;
+
+}
+
+input::placeholder {
+	
+	background-color: $gray;
+	font-weight: 400;
 }
 
 .noteTitle {
 	border-radius: 10px 10px 0 0;
-	height: 50px;
+	height: 70px;
 	border: none;
-	padding: 0 0 0 20px;
+	padding: 0px 0 0 20px;
+}
+
+textarea:focus,
+input:focus {
+	outline: none;
+}
+
+.save {
+	align-self: flex-end;
+	margin-top: 10px;
+	border: none;
+	background-color: $yellow;
+	font-weight: 600;
+	border-radius: 10px;
+	height: 30px;
+	width: 100%;
+	font-size: 2rem;
+	padding: 5px;
+	cursor: pointer;
+	color:white;
 }
