@@ -3,6 +3,7 @@
 	height: 200px;
 	width: 100%;
 	overflow-y: scroll;
+	overflow-x: hidden;
 	scrollbar-width: thick;
 	scrollbar-color: $lightGray transparent;
 	z-index: 20;
@@ -47,7 +48,8 @@
 	font-size: 2.5rem;
 	cursor: pointer;
 	padding-left: 10px;
-
+	position: relative;
+	bottom: 15px;
 	transform: all .5s ease;
 
 	&:hover {

@@ -3,9 +3,12 @@ form {
 	flex-direction: column;
 	width: 100%;
 	z-index: 10;
+	
+
 }
 
 textarea {
+	z-index: 10;
 	height: 500px;
 	border: none;
 	padding: 0 0 0 20px;
@@ -17,6 +20,7 @@ textarea {
 	font-size: 1.9rem;
 	color: white;
 	background-color: $gray;
+	
 }
 
 input {
@@ -28,9 +32,9 @@ input {
 }
 
 input::placeholder {
-	background-color: $gray;
-	font-weight: 400;
+	font-weight: 400;	
 }
+
 
 .noteTitle {
 	border-radius: 10px 10px 0 0;
@@ -42,6 +46,7 @@ input::placeholder {
 textarea:focus,
 input:focus {
 	outline: none;
+	
 }
 
 .save {
