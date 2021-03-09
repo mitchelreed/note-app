@@ -1,8 +1,9 @@
+@import "styles/fonts";
 @import "styles/variables";
 @import "styles/setup";
 @import "styles/notes";
 @import "styles/listOfNotes";
-@import "styles/fonts";
+@import "styles/buttons";
 
 body {
 	height: 100vh;
@@ -14,7 +15,7 @@ body {
 }
 
 .notesContainer {
-	background-color:$gray;
+	background-color:$lightGray;
 	border-radius: 26px;
 	width: 500px;
 	height: 900px;

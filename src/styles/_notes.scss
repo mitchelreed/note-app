@@ -49,28 +49,20 @@ input:focus {
 	
 }
 
-.save {
-	cursor: pointer;
-	align-self: center;
-	margin-top: 30px;
-	border: none;
-	background-color: $yellow;
-	font-weight: 600;
+.readNote {
+	height: 570px;
+	width: 440px;
 	border-radius: 10px;
-	height: 30px;
-	width: 165px;
-	font-size: 2rem;
-	padding: 5px;
-	color: white;
-	box-shadow: 8px -5px 29px -5px rgba(244, 214, 14, 0.75);
-	-webkit-box-shadow: 8px -5px 29px -5px rgba(244, 214, 14, 0.75);
-	-moz-box-shadow: 8px -5px 29px -5px rgba(244, 214, 14, 0.75);
-	transition: all 0.8s ease;
+	background: ghostwhite;
+	z-index: 40;
+	position: absolute;
+}
 
-	&:hover {
-		transform: translateY(-4px);
-		box-shadow: 8px -5px 29px -11px rgba(244, 214, 14, 0.75);
-		-webkit-box-shadow: 8px -5px 29px -11px rgba(244, 214, 14, 0.75);
-		-moz-box-shadow: 8px -5px 29px -11px rgba(244, 214, 14, 0.75);
-	}
+.noteIcon {
+	font-size: 3rem;
+	margin-right: 10px;
+	color: $ghost;
+	justify-self: end;
+	position: relative;
+	top: 13px;
 }
