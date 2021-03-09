@@ -67,6 +67,7 @@ function Note() {
 	const handleClear = (event) => {
 		event.preventDefault()
 
+		setNoteDisplay('')
 		// clears the state holding whatever was captured by the handle change function above
 		setTitleInput("")
 		setBodyInput("")

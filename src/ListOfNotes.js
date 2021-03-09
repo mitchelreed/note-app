@@ -1,6 +1,6 @@
 import firebase from './firebase';
 import { RiDeleteBack2Line } from "react-icons/ri";
-import { FaRegStickyNote } from "react-icons/fa";
+
 
 
 
@@ -34,15 +34,17 @@ function ListOfNotes({ notesArray, displayNote }) {
 									<div key={noteData.uniqueKey}>
 										<li>
 											<div className="titleAndDisplay">
-												<button title="display a note" className="display" onClick={()=> displayNote(noteData.noteContent.titleInput, noteData.noteContent.bodyInput )}> <p>read</p> </button>
+												
 												<h3>
 													{noteData.noteContent.titleInput}
 												</h3>
+										
 											</div>
 											<div className="paragraphAndDeleteContainer">
 												<p>
 													{noteData.noteContent.bodyInput}
 												</p>
+												<button title="display a note" className="display" onClick={()=> displayNote(noteData.noteContent.titleInput, noteData.noteContent.bodyInput )}> <p>read</p> </button>
 												<button className="delete button" onClick={() => deleteEntry(noteData.uniqueKey)} title="delete a note"><RiDeleteBack2Line /></button>
 											</div>
 										</li>
