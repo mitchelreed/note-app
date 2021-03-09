@@ -9,7 +9,6 @@ function Note() {
 	const [titleInput, setTitleInput] = useState('')
 	const [bodyInput, setBodyInput] = useState('')
 	const [noteDisplay, setNoteDisplay] = useState({})
-	const [readNote, setReadNote] = useState(false)
 	const dbRef = firebase.database().ref()
 
 

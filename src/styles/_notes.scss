@@ -3,13 +3,12 @@ form {
 	flex-direction: column;
 	width: 100%;
 	z-index: 10;
-	
-
 }
 
 textarea {
 	z-index: 10;
-	height: 500px;
+	height: 30vh;
+	min-height: 250px;
 	border: none;
 	padding: 0 0 0 20px;
 	resize: none;
