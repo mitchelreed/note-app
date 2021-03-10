@@ -8,11 +8,11 @@ function App() {
     <div>
 
       <main className="notesContainer">
-        
-          <Note />
-   
-      </main>
 
+        <Note />
+
+      <footer>made by mitch at juno college</footer>
+      </main>
     </div>
   );
 }

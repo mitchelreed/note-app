@@ -1,3 +1,4 @@
+// delete button
 .delete {
 	height: 30px;
 	border: none;
@@ -15,6 +16,7 @@
 	}
 }
 
+// save button
 .save {
 	cursor: pointer;
 	align-self: center;
@@ -48,15 +50,15 @@
 	}
 }
 
+// green "read" button, to display the note
 .display {
 	cursor: pointer;
 	align-self: center;
 	border: none;
 	background-color: $green;
 	font-weight: 900;
-	border-radius: 10px;
-	height: 15px;
-	width: 15px;
+	height: 17px;
+	width: 17px;
 	font-size: 1.5rem;
 	color: white;
 	margin-left: 10px;
@@ -74,16 +76,14 @@
 		background-color: $green;
 
 		border-radius: 10px;
-		height: 20px;
-		width: 70px;
+		height: 17px;
+		width: 50px;
 	}
 
 	p {
-		padding: 2px;
-
 		margin: 0;
-		height: 20px;
-		width: 70px;
+		height: 17px;
+		width: 50px;
 		transition: opacity 0.2s ease;
 		transition: transform 0.6s ease;
 		transform: translateX(10px);
@@ -96,6 +96,7 @@
 	}
 }
 
+// parent container for save and clear buttons
 .saveClearContainer {
 	display: flex;
 	align-items: center;
@@ -104,6 +105,7 @@
 	margin-top: 7px;
 }
 
+// clear button
 .clear {
 	background-color: $ghost;
 	color: $yellow;

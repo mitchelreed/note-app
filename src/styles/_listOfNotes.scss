@@ -1,3 +1,4 @@
+// list of notes parent container
 .listContainer {
 	margin-top: 10px;
 	height: 200px;
@@ -9,11 +10,12 @@
 	z-index: 20;
 }
 
+// to hide the scroll-bar within, on chrome, but retain functionality
 .listContainer::-webkit-scrollbar {
-	display:none;
+	display: none;
 }
 
-
+// h1 above the list
 .listOfNotesHeader {
 	width: 100%;
 	margin-top: 17px;
@@ -23,44 +25,43 @@
 	z-index: 20;
 	text-align: center;
 	border-bottom: 2px solid $yellow;
-	// font-family: 'IBM Plex Mono', sans-serif;
-
 }
 
+// the actual note titles and note body displayed
 .listOfNotes {
- width: 95%;
+	width: 95%;
 
 	h3 {
 		text-transform: capitalize;
 		overflow: hidden;
 		justify-self: flex-start;
+		
 	}
-
 
 	li {
 		list-style-type: none;
 		padding: 0 0 10px 0;
 		color: white;
-		
 	}
 
 	p {
 		height: 48px;
 		overflow: hidden;
 		width: 80%;
+		
 	}
 }
 
-	.paragraphAndDeleteContainer {
-		display: flex;
-		justify-content: space-between;
-		position: relative;
-	}
-	
 
+.paragraphAndDeleteContainer {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
 
-	.titleAndDisplay {
-		display: flex;
-		flex-direction: row-reverse;
-		border: 2px solid red;
+.createdOn {
+font-size: 1.2rem;
+opacity: .8;
+font-family: 'IBM Plex Mono', sans-serif;
 	}
+

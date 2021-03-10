@@ -1,6 +1,7 @@
 import firebase from './firebase';
 import { useEffect, useState } from 'react';
 import ListOfNotes from './ListOfNotes';
+// importing a note icon from react-icons library
 import { FaRegStickyNote } from "react-icons/fa";
 
 
@@ -14,12 +15,13 @@ function Note() {
 
 
 	useEffect(() => {
-
+		
+		// accessing firebase and pulling data to send to setNotesArray
 		dbRef.on('value', (data) => {
 
 			const noteData = data.val()
-
 			const notePad = []
+		
 
 			for (let noteKey in noteData) {
 				notePad.push({
@@ -30,14 +32,13 @@ function Note() {
 
 			setNotesArray(notePad)
 
-
 		})
 
 	}, [])
 
 
 	const handleChange = (event, input) => {
-
+		console.log(event)
 		input(event.target.value)
 	}
 
@@ -61,8 +62,8 @@ function Note() {
 		document.querySelector(".bodyText").value = ''
 		document.querySelector(".noteTitle").value = ''
 
-		document.getElementById('bodyText').style.display = 'block'
-		document.getElementById('noteTitle').style.display = 'block'
+		document.getElementById('bodyText').style.display = 'inline-block'
+		document.getElementById('noteTitle').style.display = 'inline-block'
 		document.getElementById('displayANote').style.display = 'none'
 
 	}
@@ -78,6 +79,7 @@ function Note() {
 		// clears the actual input and text area after a note is saved
 		document.querySelector(".bodyText").value = ''
 		document.querySelector(".noteTitle").value = ''
+		// css alterations in order to display the note when a user "reads" a saved note
 		document.getElementById('bodyText').style.display = 'block'
 		document.getElementById('noteTitle').style.display = 'block'
 		document.getElementById('displayANote').style.display = 'none'
@@ -92,6 +94,7 @@ function Note() {
 			body: body
 		})
 
+		// css alterations in order to display the note when a user "reads" a saved note
 		document.getElementById('bodyText').style.display = 'none'
 		document.getElementById('noteTitle').style.display = 'none'
 		document.getElementById('displayANote').style.display = 'block'
@@ -101,11 +104,11 @@ function Note() {
 
 	return (
 		<>
+			<form>
 			<div className="displayANote" id="displayANote">
 				<h3 className="displayTitle">{noteDisplay.title}</h3>
 				<p className="displayBody">{noteDisplay.body}</p>
 			</div>
-			<form>
 				<label htmlFor="noteTitle" className="sr-only"></label>
 				<input className="noteTitle" type="text" id="noteTitle" placeholder="Note title" onChange={(event) => handleChange(event, setTitleInput)} />
 				<label htmlFor="bodyText" className="sr-only"></label>
@@ -113,7 +116,7 @@ function Note() {
 
 				</textarea>
 				<div className="saveClearContainer">
-				<span className="noteIcon"><FaRegStickyNote /></span> 
+					<span className="noteIcon"><FaRegStickyNote /></span>
 					<button className="save" onClick={handleClick}>Save</button>
 					<button className="save clear" onClick={handleClear}>Clear</button>
 				</div>

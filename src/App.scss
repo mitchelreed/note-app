@@ -50,12 +50,18 @@ body {
 	background-image: url(./paper.jpg);
 }
 
-@media (max-width: 375px) {
-	.notesContainer {
-		border-radius: 0px;
-	}
-	.notesContainer::after {
-		content: " ";
-		border-radius: 0px;
-	}
+// credit on hover
+footer {
+position: absolute;
+bottom: 0;
+font-size: 1rem;
+padding: 5px;
+z-index: 40;
+opacity: 0;
+transition: all 1s ease;
+
+&:hover {
+	opacity: .7;
+	color: $gray;
+}
 }

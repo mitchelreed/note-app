@@ -50,15 +50,6 @@ input:focus {
 	outline: none;
 }
 
-.readNote {
-	height: 570px;
-	width: 440px;
-	border-radius: 10px;
-	background: ghostwhite;
-	z-index: 40;
-	position: absolute;
-}
-
 .noteIcon {
 	font-size: 3rem;
 	margin-right: 10px;
@@ -68,6 +59,7 @@ input:focus {
 	top: 13px;
 }
 
+// this is what displays when the green "read" button is clicked
 .displayANote {
 	background: ghostwhite;
 	border-radius: 10px;
