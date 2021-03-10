@@ -9,13 +9,10 @@
 	z-index: 20;
 }
 
-.listContainer::-webkit-scrollbar-track {
-	background-color: transparent;
+.listContainer::-webkit-scrollbar {
+	display:none;
 }
 
-.listContainer::-webkit-scrollbar-thumb {
-	background: $lightGray;
-}
 
 .listOfNotesHeader {
 	width: 100%;
@@ -35,8 +32,8 @@
 
 	h3 {
 		text-transform: capitalize;
-		width: 80%;
 		overflow: hidden;
+		justify-self: flex-start;
 	}
 
 
@@ -65,6 +62,5 @@
 	.titleAndDisplay {
 		display: flex;
 		flex-direction: row-reverse;
-		justify-content: start;
-		
+		border: 2px solid red;
 	}

@@ -33,13 +33,13 @@ function ListOfNotes({ notesArray, displayNote }) {
 
 									<div key={noteData.uniqueKey}>
 										<li>
-											<div className="titleAndDisplay">
+											
 												
 												<h3>
 													{noteData.noteContent.titleInput}
 												</h3>
 										
-											</div>
+										
 											<div className="paragraphAndDeleteContainer">
 												<p>
 													{noteData.noteContent.bodyInput}

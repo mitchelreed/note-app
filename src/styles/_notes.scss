@@ -22,6 +22,10 @@ textarea {
 	background-color: $gray;
 }
 
+textarea::-webkit-scrollbar {
+	display: none;
+}
+
 input {
 	font-family: "Poppins", sans-serif;
 	font-size: 2.5rem;
@@ -73,9 +77,9 @@ input:focus {
 	height: calc(30vh + 70px);
 	min-height: calc(250px + 70px);
 	width: 100%;
-	font-family: 'IBM Plex Mono', sans-serif;
+	font-family: "IBM Plex Mono", sans-serif;
 	overflow-y: scroll;
-	
+
 	p {
 		padding-top: 15px;
 	}
