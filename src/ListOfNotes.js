@@ -5,28 +5,18 @@ import { RiDeleteBack2Line } from "react-icons/ri";
 
 
 
-function ListOfNotes({ notesArray, displayNote }) {
+function ListOfNotes({ notesArray, displayNote, setErrorDisplay }) {
 
 	// delete a note from Firebase
 	const deleteEntry = (uniqueKey) => {
 
-		const dbRef = firebase.database().ref()
 
+		const dbRef = firebase.database().ref()
 		dbRef.child(uniqueKey).remove()
 		document.getElementById('bodyText').textContent = ''
+
 	}
-	
-	// displaying when the note was created
-	function formatDate(dateObject) {
-		const parts = {
-			date: dateObject.getDate(),
-			month: dateObject.getMonth() + 1,
-			year: dateObject.getFullYear()
-		}
-		return `${parts.date}/${parts.month}/${parts.year}` ;
-	}
-	const myDate = new Date()
-	const myDateFormatted = formatDate(myDate)
+
 	
 
 	return (
@@ -45,6 +35,7 @@ function ListOfNotes({ notesArray, displayNote }) {
 							const title = noteData.noteContent.titleInput
 							const body = noteData.noteContent.bodyInput
 							const uniqueKey = noteData.uniqueKey
+							const myDateFormatted = noteData.timeStamp
 
 							// ensures that an empty string does not get saved
 							if (title !== "" && body !== "") {
@@ -55,7 +46,7 @@ function ListOfNotes({ notesArray, displayNote }) {
 											<h3>
 												{title}
 											</h3>
-												<h4 className="createdOn">created on: {myDateFormatted}</h4>
+												<h4 className="createdOn">created: {myDateFormatted}</h4>
 											<div className="paragraphAndDeleteContainer">
 												<p className="paragraphList">
 													{body}
@@ -80,9 +71,7 @@ function ListOfNotes({ notesArray, displayNote }) {
 
 								)
 							} else {
-								return (
-									<p>something</p>
-								);
+								return ;
 							}
 
 						}).reverse()

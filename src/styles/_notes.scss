@@ -61,7 +61,7 @@ input:focus {
 
 // this is what displays when the green "read" button is clicked
 .displayANote {
-	background: ghostwhite;
+	background: rgb(230, 230, 235);
 	border-radius: 10px;
 	padding: 25px 10px 0 20px;
 	z-index: 50;
@@ -75,4 +75,16 @@ input:focus {
 	p {
 		padding-top: 15px;
 	}
+}
+
+.error {
+	z-index: 20;
+	font-size: 1.3rem;
+	position: absolute;
+	width: 200px;
+	top: 10px;
+	background: $yellow;
+	text-align: center;
+	opacity: .8;
+	padding: 0;
 }

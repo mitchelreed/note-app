@@ -3,15 +3,15 @@ import { useEffect, useState } from 'react';
 import ListOfNotes from './ListOfNotes';
 // importing a note icon from react-icons library
 import { FaRegStickyNote } from "react-icons/fa";
-
+import formatDate from './dateAndTime'
 
 function Note() {
 	const [notesArray, setNotesArray] = useState([])
 	const [titleInput, setTitleInput] = useState('')
 	const [bodyInput, setBodyInput] = useState('')
 	const [noteDisplay, setNoteDisplay] = useState({})
+	const [errorDisplay, setErrorDisplay] = useState('')
 	const dbRef = firebase.database().ref()
-
 
 
 	useEffect(() => {
@@ -26,7 +26,8 @@ function Note() {
 			for (let noteKey in noteData) {
 				notePad.push({
 					uniqueKey: noteKey,
-					noteContent: noteData[noteKey]
+					noteContent: noteData[noteKey],
+					timeStamp: noteData[noteKey].timeStamp
 				})
 			}
 
@@ -47,10 +48,13 @@ function Note() {
 		setNoteDisplay('')
 		const dbRef = firebase.database().ref()
 
+		const timeStamp = formatDate()
 
 		// ensures that an empty string does not get pushed to firebase
 		if (titleInput !== "" && bodyInput !== "") {
-			dbRef.push({ titleInput, bodyInput })
+			dbRef.push({ titleInput, bodyInput, timeStamp })
+		}else {
+			setErrorDisplay('please enter a full note ' + '📓' + '🙂')
 		}
 
 		// clears the state holding whatever was captured by the handle change function above
@@ -70,6 +74,8 @@ function Note() {
 	const handleClear = (event) => {
 		event.preventDefault()
 
+		setErrorDisplay('')
+
 		setNoteDisplay('')
 		// clears the state holding whatever was captured by the handle change function above
 		setTitleInput("")
@@ -84,7 +90,7 @@ function Note() {
 		document.getElementById('displayANote').style.display = 'none'
 	}
 
-
+	
 
 	const displayNote = (title, body) => {
 
@@ -103,6 +109,7 @@ function Note() {
 
 	return (
 		<>
+			<p className="error">{errorDisplay}</p>
 			<form>
 			<div className="displayANote" id="displayANote">
 				<h3 className="displayTitle">{noteDisplay.title}</h3>
@@ -122,7 +129,7 @@ function Note() {
 
 			</form>
 
-			<ListOfNotes notesArray={notesArray} displayNote={displayNote} />
+			<ListOfNotes notesArray={notesArray} displayNote={displayNote} setErrorDisplay={setErrorDisplay} />
 
 		</>
 	)
