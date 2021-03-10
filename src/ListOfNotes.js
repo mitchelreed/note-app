@@ -40,6 +40,7 @@ function ListOfNotes({ notesArray, displayNote }) {
 					{
 						// map over firebase, display saved notes in the bottom half of the app
 						notesArray.map((noteData) => {
+							
 							// variables to simplify the following code
 							const title = noteData.noteContent.titleInput
 							const body = noteData.noteContent.bodyInput
@@ -78,9 +79,13 @@ function ListOfNotes({ notesArray, displayNote }) {
 									</div>
 
 								)
+							} else {
+								return (
+									<p>something</p>
+								);
 							}
 
-						}).reverse() // <--- displays the array in reverse order so the newest note is shown first
+						}).reverse()
 					}
 
 				</ul>

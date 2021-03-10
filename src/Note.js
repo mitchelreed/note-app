@@ -34,11 +34,10 @@ function Note() {
 
 		})
 
-	}, [])
+	}, [dbRef])
 
 
 	const handleChange = (event, input) => {
-		console.log(event)
 		input(event.target.value)
 	}
 
