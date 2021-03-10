@@ -39,6 +39,13 @@
 		-webkit-box-shadow: 8px -5px 29px -11px rgba(244, 214, 14, 0.75);
 		-moz-box-shadow: 8px -5px 29px -11px rgba(244, 214, 14, 0.75);
 	}
+
+	&:active {
+		transform: translateY(-4px);
+		box-shadow: 8px -5px 29px -11px rgba(244, 214, 14, 0.75);
+		-webkit-box-shadow: 8px -5px 29px -11px rgba(244, 214, 14, 0.75);
+		-moz-box-shadow: 8px -5px 29px -11px rgba(244, 214, 14, 0.75);
+	}
 }
 
 .display {

@@ -61,6 +61,10 @@ function Note() {
 		document.querySelector(".bodyText").value = ''
 		document.querySelector(".noteTitle").value = ''
 
+		document.getElementById('bodyText').style.display = 'block'
+		document.getElementById('noteTitle').style.display = 'block'
+		document.getElementById('displayANote').style.display = 'none'
+
 	}
 
 	const handleClear = (event) => {
@@ -74,7 +78,9 @@ function Note() {
 		// clears the actual input and text area after a note is saved
 		document.querySelector(".bodyText").value = ''
 		document.querySelector(".noteTitle").value = ''
-
+		document.getElementById('bodyText').style.display = 'block'
+		document.getElementById('noteTitle').style.display = 'block'
+		document.getElementById('displayANote').style.display = 'none'
 	}
 
 
@@ -86,18 +92,24 @@ function Note() {
 			body: body
 		})
 
+		document.getElementById('bodyText').style.display = 'none'
+		document.getElementById('noteTitle').style.display = 'none'
+		document.getElementById('displayANote').style.display = 'block'
+
 	}
 
 
 	return (
 		<>
-
-			
+			<div className="displayANote" id="displayANote">
+				<h3 className="displayTitle">{noteDisplay.title}</h3>
+				<p className="displayBody">{noteDisplay.body}</p>
+			</div>
 			<form>
 				<label htmlFor="noteTitle" className="sr-only"></label>
-				<input className="noteTitle" type="text" id="noteTitle" placeholder="Note title" onChange={(event) => handleChange(event, setTitleInput)} value={noteDisplay.title} />
+				<input className="noteTitle" type="text" id="noteTitle" placeholder="Note title" onChange={(event) => handleChange(event, setTitleInput)} />
 				<label htmlFor="bodyText" className="sr-only"></label>
-				<textarea className="bodyText" id="bodyText" placeholder="Start typing..." onChange={(event) => handleChange(event, setBodyInput)} value={noteDisplay.body}>
+				<textarea className="bodyText" id="bodyText" placeholder="Start typing..." onChange={(event) => handleChange(event, setBodyInput)} >
 
 				</textarea>
 				<div className="saveClearContainer">
