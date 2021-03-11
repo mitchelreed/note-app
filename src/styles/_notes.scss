@@ -3,6 +3,7 @@ form {
 	flex-direction: column;
 	width: 100%;
 	z-index: 10;
+	position: relative;
 }
 
 textarea {
@@ -69,7 +70,8 @@ input:focus {
 	z-index: 50;
 	display: none;
 	height: calc(30vh + 50px);
-	min-height: calc(200px + 70px);
+	scrollbar-color: transparent transparent;
+	min-height: calc(200px + 50px);
 	width: 100%;
 	font-family: "IBM Plex Mono", sans-serif;
 	overflow-y: scroll;
@@ -81,6 +83,10 @@ input:focus {
 	h3 {
 		text-transform: capitalize;
 	}
+}
+
+.displayANote::-webkit-scrollbar {
+	display: none;
 }
 
 .error {

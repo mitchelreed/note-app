@@ -84,8 +84,8 @@ function Note() {
 		document.querySelector(".bodyText").value = ''
 		document.querySelector(".noteTitle").value = ''
 
-		document.getElementById('bodyText').style.display = 'inline-block'
-		document.getElementById('noteTitle').style.display = 'inline-block'
+		document.getElementById('bodyText').style.display = 'block'
+		document.getElementById('noteTitle').style.display = 'block'
 		document.getElementById('displayANote').style.display = 'none'
 
 	}
