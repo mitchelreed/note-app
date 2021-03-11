@@ -70,3 +70,15 @@ body {
 		transform: translateY(0);
 	}
 }
+
+// straighten out the corners for cellphone size screens
+@media (max-width: 475px) {
+	.notesContainer {
+		border-radius: 0px;
+	}
+	.notesContainer::after {
+		content: " ";
+		border-radius: 0px;
+	}
+}
+
