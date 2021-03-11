@@ -15,13 +15,13 @@ function Note() {
 
 
 	useEffect(() => {
-		
+
 		// accessing firebase and pulling data to send to setNotesArray
 		dbRef.on('value', (data) => {
 
 			const noteData = data.val()
 			const notePad = []
-		
+
 
 			for (let noteKey in noteData) {
 				notePad.push({
@@ -44,17 +44,20 @@ function Note() {
 
 	const handleClick = (event) => {
 		event.preventDefault()
-
+		// clear error
+		setErrorDisplay('')
+		// clear note display
 		setNoteDisplay('')
-		const dbRef = firebase.database().ref()
 
+		const dbRef = firebase.database().ref()
+		// time stamp to be pushed
 		const timeStamp = formatDate()
 
 		// ensures that an empty string does not get pushed to firebase
 		if (titleInput !== "" && bodyInput !== "") {
 			dbRef.push({ titleInput, bodyInput, timeStamp })
-		}else {
-			setErrorDisplay('please enter a full note ' + '📓' + '🙂')
+		} else {
+			setErrorDisplay('please enter a full note 📓 🙂')
 		}
 
 		// clears the state holding whatever was captured by the handle change function above
@@ -73,9 +76,9 @@ function Note() {
 
 	const handleClear = (event) => {
 		event.preventDefault()
-
+		// clear error
 		setErrorDisplay('')
-
+		// clear note display
 		setNoteDisplay('')
 		// clears the state holding whatever was captured by the handle change function above
 		setTitleInput("")
@@ -90,10 +93,10 @@ function Note() {
 		document.getElementById('displayANote').style.display = 'none'
 	}
 
-	
+
 
 	const displayNote = (title, body) => {
-
+		// this will display an already saved note
 		setNoteDisplay({
 			title: title,
 			body: body
@@ -111,10 +114,10 @@ function Note() {
 		<>
 			<p className="error">{errorDisplay}</p>
 			<form>
-			<div className="displayANote" id="displayANote">
-				<h3 className="displayTitle">{noteDisplay.title}</h3>
-				<p className="displayBody">{noteDisplay.body}</p>
-			</div>
+				<div className="displayANote" id="displayANote">
+					<h3 className="displayTitle">{noteDisplay.title}</h3>
+					<p className="displayBody">{noteDisplay.body}</p>
+				</div>
 				<label htmlFor="noteTitle" className="sr-only"></label>
 				<input className="noteTitle" type="text" id="noteTitle" placeholder="Note title" onChange={(event) => handleChange(event, setTitleInput)} />
 				<label htmlFor="bodyText" className="sr-only"></label>

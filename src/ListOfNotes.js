@@ -12,6 +12,7 @@ function ListOfNotes({ notesArray, displayNote, setErrorDisplay }) {
 
 
 		const dbRef = firebase.database().ref()
+		// selects the entry by KEY and removes
 		dbRef.child(uniqueKey).remove()
 		document.getElementById('bodyText').textContent = ''
 
@@ -71,7 +72,9 @@ function ListOfNotes({ notesArray, displayNote, setErrorDisplay }) {
 
 								)
 							} else {
-								return ;
+								return (
+									<span>.</span>
+								);
 							}
 
 						}).reverse()
