@@ -12,6 +12,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 	font-family: "Poppins", sans-serif;
 	background: rgb(223, 222, 220);
 	overflow-x: hidden;
@@ -72,13 +73,18 @@ body {
 }
 
 // straighten out the corners for cellphone size screens
-@media (max-width: 475px) {
+@media (max-width: 420px) {
 	.notesContainer {
 		border-radius: 0px;
 	}
 	.notesContainer::after {
 		content: " ";
 		border-radius: 0px;
+	}
+
+	.notesContainer {
+		width: 100vw;
+		height: 100vh;
 	}
 }
 
