@@ -51,17 +51,23 @@ body {
 }
 
 // credit on hover
-footer {
+.footer {
 position: absolute;
 bottom: 0;
 font-size: 1rem;
 padding: 5px;
 z-index: 40;
 opacity: 0;
-transition: all 1s ease;
+transition: all .8s ease;
+font-weight: bold;
+color: $ghost;
+transform: translateY(5px);
 
 &:hover {
 	opacity: .7;
-	color: $gray;
+	color: $ghost;
+	font-weight: bold;
+	transform: translateY(0);
 }
 }
+

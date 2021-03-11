@@ -10,7 +10,7 @@ function App() {
 
         <Note />
 
-      <footer>made by mitch at juno college</footer>
+      <span className="footer">made by mitch at juno college</span>
       </main>
     </div>
   );
