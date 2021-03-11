@@ -92,17 +92,7 @@ function Note() {
 
 	const handleClear = (event) => {
 		event.preventDefault()
-		// clear error
-		setErrorDisplay('')
-		// clear note display
-		setNoteDisplay('')
-		// clears the state holding whatever was captured by the handle change function above
-		setTitleInput("")
-		setBodyInput("")
 
-		// clears the actual input and text area after a note is saved
-		document.querySelector(".bodyText").value = ''
-		document.querySelector(".noteTitle").value = ''
 		// css alterations in order to display the note when a user "reads" a saved note
 		document.getElementById('bodyText').style.display = 'block'
 		document.getElementById('noteTitle').style.display = 'block'
@@ -143,7 +133,7 @@ function Note() {
 				<div className="saveClearContainer">
 					<span className="noteIcon"><FaRegStickyNote /></span>
 					<button className="save" onClick={handleClick}>Save</button>
-					<button className="save clear" onClick={handleClear}>Clear</button>
+					<button className="save clear" onClick={handleClear}>Back</button>
 				</div>
 
 			</form>
