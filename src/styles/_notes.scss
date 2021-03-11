@@ -61,12 +61,14 @@ input:focus {
 
 // this is what displays when the green "read" button is clicked
 .displayANote {
+	display: flex;
+	flex-direction: column;
 	background: rgb(230, 230, 235);
 	border-radius: 10px;
 	padding: 25px 10px 0 20px;
 	z-index: 50;
 	display: none;
-	height: calc(30vh + 70px);
+	height: calc(30vh + 50px);
 	min-height: calc(200px + 70px);
 	width: 100%;
 	font-family: "IBM Plex Mono", sans-serif;
