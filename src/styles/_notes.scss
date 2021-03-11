@@ -71,9 +71,14 @@ input:focus {
 	width: 100%;
 	font-family: "IBM Plex Mono", sans-serif;
 	overflow-y: scroll;
+	
 
 	p {
 		padding-top: 15px;
+	}
+
+	h3 {
+		text-transform: capitalize;
 	}
 }
 
