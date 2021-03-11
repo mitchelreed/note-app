@@ -10,7 +10,7 @@ function ListOfNotes({ notesArray, displayNote}) {
 	// delete a note from Firebase
 	const deleteEntry = (uniqueKey) => {
 
-		if (confirm('Are you sure you want to delete this note?')) {
+		if (window.confirm('Are you sure you want to delete this note?')) {
 			// delete it!
 			const dbRef = firebase.database().ref()
 		// selects the entry by KEY and removes
