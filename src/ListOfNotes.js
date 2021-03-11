@@ -3,8 +3,6 @@ import firebase from './firebase';
 import { RiDeleteBack2Line } from "react-icons/ri";
 
 
-
-
 function ListOfNotes({ notesArray, displayNote}) {
 
 	// delete a note from Firebase
@@ -18,10 +16,7 @@ function ListOfNotes({ notesArray, displayNote}) {
 		document.getElementById('bodyText').textContent = ''
 		} else {
 			// Do nothing!
-			
 		}
-		
-
 	}
 
 	

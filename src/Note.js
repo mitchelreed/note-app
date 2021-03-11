@@ -23,8 +23,8 @@ function Note() {
 
 			const noteData = data.val()
 			const notePad = []
-
-
+			console.log(notePad)
+			// push key, 
 			for (let noteKey in noteData) {
 				notePad.push({
 					uniqueKey: noteKey,
@@ -56,18 +56,20 @@ function Note() {
 		const timeStamp = formatDate()
 
 		// ensures that an empty string does not get pushed to firebase
+		// a fun conditional if someone types Hello?
 		if (titleInput !== "" && bodyInput !== "") {
 			dbRef.push({ titleInput, bodyInput, timeStamp })
-		} else if (titleInput === "Hello?" || titleInput === "Hello") {
-
+		} else if (titleInput === "Hello?") {
+			// auto time out the secret message
 			setErrorDisplay('Hi there....teehee')
 			setTimeout(() => {
 				setErrorDisplay('')
 			}, 1500)
 
-		
+
 		}
 		else {
+			// auto time out the error notification
 			setErrorDisplay('please enter a full note 📓 🙂')
 			setTimeout(() => {
 				setErrorDisplay('')

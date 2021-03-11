@@ -1,4 +1,3 @@
-
 // displaying when the note was created and generating full time stamp
 	export default function formatDate() {
 		const myDate = new Date()
