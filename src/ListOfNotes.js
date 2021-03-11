@@ -5,16 +5,22 @@ import { RiDeleteBack2Line } from "react-icons/ri";
 
 
 
-function ListOfNotes({ notesArray, displayNote, setErrorDisplay }) {
+function ListOfNotes({ notesArray, displayNote}) {
 
 	// delete a note from Firebase
 	const deleteEntry = (uniqueKey) => {
 
-
-		const dbRef = firebase.database().ref()
+		if (confirm('Are you sure you want to delete this note?')) {
+			// delete it!
+			const dbRef = firebase.database().ref()
 		// selects the entry by KEY and removes
 		dbRef.child(uniqueKey).remove()
 		document.getElementById('bodyText').textContent = ''
+		} else {
+			// Do nothing!
+			
+		}
+		
 
 	}
 
@@ -54,7 +60,7 @@ function ListOfNotes({ notesArray, displayNote, setErrorDisplay }) {
 												</p>
 												
 												<button 
-												title="display a note" 
+												aria-label="display a note" 
 												className="display" 
 												onClick={() => displayNote(title, body)}> 
 												<p>read</p> 
@@ -73,7 +79,7 @@ function ListOfNotes({ notesArray, displayNote, setErrorDisplay }) {
 								)
 							} else {
 								return (
-									<span>.</span>
+									<span key={uniqueKey}>.</span>
 								);
 							}
 

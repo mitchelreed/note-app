@@ -8,7 +8,7 @@ form {
 textarea {
 	z-index: 10;
 	height: 30vh;
-	min-height: 250px;
+	min-height: 200px;
 	overflow-y: scroll;
 	border: none;
 	padding: 0 0 0 20px;
@@ -67,7 +67,7 @@ input:focus {
 	z-index: 50;
 	display: none;
 	height: calc(30vh + 70px);
-	min-height: calc(250px + 70px);
+	min-height: calc(200px + 70px);
 	width: 100%;
 	font-family: "IBM Plex Mono", sans-serif;
 	overflow-y: scroll;

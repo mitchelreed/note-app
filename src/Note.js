@@ -6,11 +6,13 @@ import { FaRegStickyNote } from "react-icons/fa";
 import formatDate from './dateAndTime'
 
 function Note() {
+
 	const [notesArray, setNotesArray] = useState([])
 	const [titleInput, setTitleInput] = useState('')
 	const [bodyInput, setBodyInput] = useState('')
 	const [noteDisplay, setNoteDisplay] = useState({})
 	const [errorDisplay, setErrorDisplay] = useState('')
+
 	const dbRef = firebase.database().ref()
 
 
@@ -56,8 +58,20 @@ function Note() {
 		// ensures that an empty string does not get pushed to firebase
 		if (titleInput !== "" && bodyInput !== "") {
 			dbRef.push({ titleInput, bodyInput, timeStamp })
-		} else {
+		} else if (titleInput === "Hello?" || titleInput === "Hello") {
+
+			setErrorDisplay('Hi there....teehee')
+			setTimeout(() => {
+				setErrorDisplay('')
+			}, 1500)
+
+		
+		}
+		else {
 			setErrorDisplay('please enter a full note 📓 🙂')
+			setTimeout(() => {
+				setErrorDisplay('')
+			}, 3000)
 		}
 
 		// clears the state holding whatever was captured by the handle change function above
@@ -132,7 +146,7 @@ function Note() {
 
 			</form>
 
-			<ListOfNotes notesArray={notesArray} displayNote={displayNote} setErrorDisplay={setErrorDisplay} />
+			<ListOfNotes notesArray={notesArray} displayNote={displayNote} />
 
 		</>
 	)
