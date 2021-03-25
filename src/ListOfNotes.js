@@ -3,7 +3,7 @@ import firebase from './firebase';
 import { RiDeleteBack2Line } from "react-icons/ri";
 
 
-function ListOfNotes({ notesArray, displayNote}) {
+function ListOfNotes({ notesArray, displayNote }) {
 
 	// delete a note from Firebase
 	const deleteEntry = (uniqueKey) => {
@@ -11,15 +11,18 @@ function ListOfNotes({ notesArray, displayNote}) {
 		if (window.confirm('Are you sure you want to delete this note?')) {
 			// delete it!
 			const dbRef = firebase.database().ref()
-		// selects the entry by KEY and removes
-		dbRef.child(uniqueKey).remove()
-		document.getElementById('bodyText').textContent = ''
+			// selects the entry by KEY and removes
+			dbRef.child(uniqueKey).remove()
+
+			// **** I know that using Vanilla JS in this context isn't a great approach with React, I plan on updating this stuff to be accomplished with conditional rendering ****
+
+			document.getElementById('bodyText').textContent = ''
 		} else {
 			// Do nothing!
 		}
 	}
 
-	
+
 
 	return (
 		<>
@@ -32,7 +35,7 @@ function ListOfNotes({ notesArray, displayNote}) {
 					{
 						// map over firebase, display saved notes in the bottom half of the app
 						notesArray.map((noteData) => {
-							
+
 							// variables to simplify the following code
 							const title = noteData.noteContent.titleInput
 							const body = noteData.noteContent.bodyInput
@@ -48,24 +51,24 @@ function ListOfNotes({ notesArray, displayNote}) {
 											<h3>
 												{title}
 											</h3>
-												<h4 className="createdOn">created: {myDateFormatted}</h4>
+											<h4 className="createdOn">created: {myDateFormatted}</h4>
 											<div className="paragraphAndDeleteContainer">
 												<p className="paragraphList">
 													{body}
 												</p>
-												
-												<button 
-												aria-label="display a note" 
-												className="display" 
-												onClick={() => displayNote(title, body)}> 
-												<p>read</p> 
+
+												<button
+													aria-label="display a note"
+													className="display"
+													onClick={() => displayNote(title, body)}>
+													<p>read</p>
 												</button>
-												<button 
-												className="delete button" 
-												onClick={() => deleteEntry(uniqueKey)} 
-												title="delete a note">
+												<button
+													className="delete button"
+													onClick={() => deleteEntry(uniqueKey)}
+													title="delete a note">
 													<RiDeleteBack2Line />
-													</button>
+												</button>
 
 											</div>
 										</li>

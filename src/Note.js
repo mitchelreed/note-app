@@ -80,6 +80,8 @@ function Note() {
 		setTitleInput("")
 		setBodyInput("")
 
+		// **** I know that using Vanilla JS in this context isn't a great approach with React, I plan on updating this stuff to be accomplished with conditional rendering ****
+
 		// clears the actual input and text area after a note is saved
 		document.querySelector(".bodyText").value = ''
 		document.querySelector(".noteTitle").value = ''
